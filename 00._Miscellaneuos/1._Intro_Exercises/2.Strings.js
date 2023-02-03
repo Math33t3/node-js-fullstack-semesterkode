@@ -20,7 +20,8 @@ const anotherNumberOne = "1.10";
 const anotherNumberTwo = "2.30";
 
 const anotherNumberThree = Number(anotherNumberOne) + Number(anotherNumberTwo);
-console.log(anotherNumberThree.toFixed(2));
+const anotherResult = anotherNumberThree.toFixed(2)
+console.log(anotherResult);
 
 // --------------------------------------
 // Exercise 5 - Decimals and average
@@ -31,7 +32,7 @@ const three = 98;
 
 // Show in the console the avg. with 5 decimals
 
-const averageNumber = (one + two + three)/3;
+const averageNumber = (one + two + three) / 3;
 console.log(averageNumber.toFixed(5));
 
 
@@ -41,7 +42,8 @@ console.log(averageNumber.toFixed(5));
 
 const letters = "abc";
 // Get me the character "c"
-console.log(letters[2]);
+const charC = letters[2];
+console.log(charC);
 
 
 // --------------------------------------
@@ -49,10 +51,10 @@ console.log(letters[2]);
 
 const fact = "You are learning javascript!";
 
-const replacement = fact.replace(fact.charAt(17),"J")
-console.log(replacement)
+const replacement = fact.replace(fact.charAt(17),"J");
+console.log(replacement);
 
-const replacement2 = fact.replace("j","J")
+const replacement2 = fact.replace("j","J");
 console.log(replacement2);
 
 
