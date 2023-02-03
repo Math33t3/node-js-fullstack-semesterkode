@@ -48,11 +48,14 @@ console.log(letters[2]);
 // Exercise 7 - Replace
 
 const fact = "You are learning javascript!";
-const replacement = fact.replace("j","J")
-console.log(replacement);
 
-const replacement2 = fact.replace(fact.charAt(17),"J")
-console.log(replacement2)
+const replacement = fact.replace(fact.charAt(17),"J")
+console.log(replacement)
+
+const replacement2 = fact.replace("j","J")
+console.log(replacement2);
+
+
 // capitalize the J in Javascript
 
 
