@@ -1,0 +1,10 @@
+Following REST API conventions.
+
+HTTP	    Endpoint	       Description
+
+GET	          /birds	       Fetch List of all Bird resources
+GET	          /birds/<id>	   Fetch a specific Bird resource by id.
+POST	      /birds	       Add a new Bird resource.(Planned.)
+PUT	          /birds/<id>	   Update Bird resource by id. (Planned.) 
+PATCH	      /birds/<id>	   Update Bird resource by id. (Planned.)
+DELETE	      /birds/<id>	   Delete Bird resource by id. (Planned.)
