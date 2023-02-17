@@ -8,18 +8,19 @@ const birds = [{name: "Swan", id: "1"}, {name: "Peacock", id: "2"}
 
 //making our first endpoint
 app.get("/birds", (req, res) => {
-    res.send(birds);
+    res.send({data: birds});
 });
 
 
 app.get( "/birds/:id", (req, res) => {
-    const bird = birds.find(bird => bird.id === req.params.id);
+    const bird = birds.find(bird => bird.id === Number(req.params.id));
     console.log(req.params);
+    //reg.params - to get the parameters - reg.params.id fx.
     //Making the response and error message.
     if (!bird) {
         res.status(404).send("Your bird was not found.");
     } else{
-        res.send(bird);
+        res.send({data: bird});
     }
 });
 
