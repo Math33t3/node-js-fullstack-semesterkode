@@ -56,11 +56,6 @@ app.delete("/birds/:id", (req, res) => {
         birds.splice(birdToDelete, 1);
         res.send('you have deleted the bird');
     }
-
-    console.log(idOfBirdToDelete);
-    console.log(birdToDelete);
-    //birds = birdsWithoutDeleted;
-    
 });
 
 
