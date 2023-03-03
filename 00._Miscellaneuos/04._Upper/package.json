@@ -1,0 +1,24 @@
+{
+  "name": "upper",
+  "version": "0.0.1",
+  "description": "Motivational app with jokes, quotes and daily commands",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "motivation",
+    "jokes",
+    "daily",
+    "commands",
+    "upper",
+    "happiness"
+  ],
+  "author": "MCB",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  }
+}

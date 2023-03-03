@@ -20,15 +20,25 @@ app.get("/birds/:id", (req, res) => {
 });
 
 //our create endpoint
+let currentId = 4
 app.post("/birds", (req, res) => {
+    
+    const birdToCreate = req.body;
+    birdToCreate.id = ++currentId;
+    birds.push(birdToCreate);
+    res.send({ data: birdToCreate });
+
+})
+
+/*app.post("/birds", (req, res) => {
     const newBird = {
-        id: birds[birds.length - 1].id + 1, //should take deleting into account.
+        id: birds[birds.length - 1].id + 1, //should take deleting into account, except reusing id's
         name: req.body.name,
         color: req.body.color
     };
     birds.push(newBird);
     res.send('New Bird created')
-});
+});*/
 
 //Our update endpoint
 app.put("/birds/:id", (req, res) => {
@@ -38,7 +48,7 @@ app.put("/birds/:id", (req, res) => {
     if (!ourBird) {
         return res.status(404).send('Bird not found');
     }
-
+    
     ourBird.name = req.body.name;
     ourBird.color = req.body.color;
 
@@ -49,11 +59,12 @@ app.put("/birds/:id", (req, res) => {
 app.delete("/birds/:id", (req, res) => {
     const idOfBirdToDelete = parseInt(req.params.id);
     //const birdsWithoutDeleted = birds.filter(ourBird => ourBird.id !== idOfBirdToDelete);
-    const birdToDelete = birds.findIndex(bird => bird.id === idOfBirdToDelete);
+    const indexOfBirdToDelete = birds.findIndex(bird => bird.id === idOfBirdToDelete);
+    //put the error check first 
     if (birdToDelete === -1) {
         res.status(404).json({ error: 'chosen bird not found'});
     } else {
-        birds.splice(birdToDelete, 1);
+        birds.splice(indexOfBirdToDelete, 1);
         res.send('you have deleted the bird');
     }
 });

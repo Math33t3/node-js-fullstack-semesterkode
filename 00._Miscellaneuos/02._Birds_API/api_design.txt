@@ -5,5 +5,6 @@ HTTP	    Endpoint	       Description
 GET	          /birds	       Fetch List of all Bird resources
 GET	          /birds/<id>	   Fetch a specific Bird resource by id.
 POST	      /birds	       Add a new Bird resource.
-PUT	          /birds/<id>	   Update Bird resource by id.  
+PATCH         /birds/<id>      Update Bird resource by id.  /replaces attributes on existing resources 
+PUT	          /birds/<id>	   Update Bird resource by id.  /replaces the entire resource
 DELETE	      /birds/<id>	   Delete Bird resource by id. 
