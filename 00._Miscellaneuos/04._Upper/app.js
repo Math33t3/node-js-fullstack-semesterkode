@@ -4,6 +4,7 @@ const app = express();
 import path from "path";
 
 app.use(express.static("public")); //serves the directory
+app.use(express.urlencoded({ extended: true }));
 
 //import jokes from "./util/jokes.js"; //cannot omit extensions in ES
 //const jokes = require("./util/jokes");//omitting extensions starts a check, to see if there's any files called joke.js, jokes.json etc.
@@ -30,7 +31,10 @@ const IRLQuestsPage = templateEngine.renderPage(quests, {
     tabTitle: "UPPER | IRLQuests"
 });
 
-
+const contact = templateEngine.readPage("./public/pages/contact/contact.html");
+const contactPage = templateEngine.renderPage(contact, {
+    tabTitle: "UPPER | Contact"
+});
 
 //Constructed pages
 
@@ -44,6 +48,10 @@ app.get("/", (req, res) => {
 app.get("/IRLQuests", (req, res) => {
     res.send(IRLQuestsPage);
     //res.sendFile(path.resolve("public","pages","quests", "IRLQuests.html"));
+});
+
+app.get("/contact", (req, res) => {
+    res.send(contactPage);
 });
 
 /*app.get("/jokes", async (req, res) => {
@@ -63,19 +71,21 @@ app.get("/jokes" , async (req, res) => {
     res.send();
 });
 
+/* API */
+
+app.post("/api/contact", (req, res) => {
+    console.log(req.body)
+
+    res.send(req.body);
+});
 
 
 
+if (process.env.ENV = "DEV"){
+    //Setup dev
+}
 
-
-
-
-
-
-
-
-
-const PORT = 8080;
+const PORT = Number(process.env.PORT) || 8080;
 app.listen(PORT, (error) => {
     if (error) {
         console.log(error);
